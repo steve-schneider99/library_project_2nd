@@ -1,0 +1,18 @@
+<h1>Welcome, lowly <%= @patron.name() %>, to the Library Book Rental System zzzzz...</h1>
+
+
+<h3>Search for your desired books below, by title or by author</h3>
+
+<a href="/">Obtain a new identity...</a>
+
+<form action="/author_results" method="get">
+  <label for="author">Search For Author:</label>
+  <input id="author" name="author" type="text">
+  <button type="submit">Search</button>
+</form>
+
+<form action="/title_results" method="get">
+  <label for="title">Search For Title:</label>
+  <input id="title" name="title" type="text">
+  <button type="submit">Search</button>
+</form>

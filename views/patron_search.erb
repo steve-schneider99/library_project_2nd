@@ -1,0 +1,8 @@
+<h1>Your returned the following, be grateful</h1>
+
+<h3>Check which books to check out:</h3>
+<ul>
+  <% @patrons.each() do |patron| %>
+    <li><a href="/patron/<%= patron.id() %>"><%= patron.name() %></a></li>
+  <% end %>
+</ul>
