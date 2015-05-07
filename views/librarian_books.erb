@@ -1,0 +1,24 @@
+<h1>Welcome, Oh Omnipotent Librarian!</h1>
+
+<h2>We humbly request that you view our petty archives for your amusement.</h2>
+<h3>Please select a book from the list below if you wish to change it's fate</h3>
+<ul>
+  <% @books.each() do |book| %>
+    <li><a href="/librarian_book/<%= book.id() %>"><%= book.title() %></a></li>
+  <% end %>
+</ul>
+
+
+<h2>We grovel at your feet asking you to endow our library with your knowledge:</h2>
+
+<form action="/add_book" method="post">
+  <div class="form-group">
+    <label for="title">Enter your title here:</label>
+    <input id="title" name="title" type="text">
+    <label for="author">Enter your author here:</label>
+    <input id="author" name="author" type="text">
+    <button type="submit">add book</button>
+  </div>
+</form>
+
+<a href="/">Return to a normal life</a>

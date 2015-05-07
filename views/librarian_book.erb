@@ -1,0 +1,28 @@
+<h1> Here are the following details for <%= @book.title() %></h1>
+
+<h3>The author(s) of this book is:</h3>
+
+<p><%= @book.author() %> </p>
+
+<h3>Edit the details of the book here:</h3>
+
+<form action="/book/<%= @book.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <div class="form-group">
+    <label for="title">Change Title:</label>
+    <input id="title" name="title" type="text">
+
+    <label for="author">Change/Add Author:</label>
+    <input id="author" name="author" type="text">
+  </div>
+  <button type="submit">Update Book</button>
+</form>
+
+<h3>To delete this book, click the button below</h3>
+<form action="/book/<%= @book.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit"> Delete Book</button>
+</form>
+
+<a href="/librarian_books">Go back to book list</a>
